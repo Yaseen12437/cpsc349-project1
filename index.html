@@ -1,16 +1,20 @@
 ---
 layout: base
 title: Home
+tagline: We show really cool photos here.
+description: 11ty Pexels is a project made for CPSC 349-01 (Web Front-End Engineering).
 ---
-<header>
-    <h1>{{ title }} </h1>
-</header>
 
-<footer>
-    <hr>
-    <p>
-        <small>
-            <a href="https://www.pexels.com">Photos provided by Pexels</a>
-        </small>
-    </p>
-</footer>
+<section>
+  <hr />
+
+  <header>
+    <h2>Images</h2>
+  </header>
+
+  {% for image in photos.13avfhr.media -%}
+  <aside>
+    <img src="{{image.src.medium}}" alt="{{image.alt}}" />
+  </aside>
+  {% endfor -%}
+</section>

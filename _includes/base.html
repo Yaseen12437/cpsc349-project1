@@ -1,12 +1,54 @@
 ---
-site: CPSC 349 - Fall 2022 - Project 1
+site: 11ty Pexels
 ---
 
-<head>
-    <title>{{ title }} - {{ site }}</title>
-    <link rel="stylesheet" href="https://unpkg.com/mvp.css">
-</head>
+<!DOCTYPE html>
 
-<body>
-    {{ content }}
-</body>
+<html lang="en">
+  <head>
+    <title>{{ title }} | {{ site }}</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="https://unpkg.com/mvp.css" />
+  </head>
+
+  <body>
+    <header>
+      <nav>
+        <h3>{{ site }}</h3>
+
+        <ul>
+          <li><a href="/">Home</a></li>
+          <li><a href="/">About</a></li>
+          <li>
+            <a
+              href="https://github.com/mploythai/cpsc349-project1"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              GitHub
+            </a>
+          </li>
+        </ul>
+      </nav>
+
+      <h1>{{ tagline }}</h1>
+      <p>{{ description }}</p>
+    </header>
+
+    <main>{{ content }}</main>
+
+    <footer>
+      <p>
+        <small>
+          <a
+            href="https://pexels.com"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            Photos provided by Pexels
+          </a>
+        </small>
+      </p>
+    </footer>
+  </body>
+</html>
