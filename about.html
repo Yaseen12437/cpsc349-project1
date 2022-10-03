@@ -1,0 +1,17 @@
+---
+layout: base
+title: About
+tagline: About Us
+description: 11ty Pexels is a project made for CPSC 349-01 (Web Front-End Engineering).
+---
+
+<section>
+  <hr />
+
+  {%- for dev in devs %}
+    <aside>
+      <h2>{{dev.name}}</h2>
+      <a href="{{dev.gh}}" target="_blank">GitHub Fork</a>
+    </aside>
+  {%- endfor %}
+</section>
