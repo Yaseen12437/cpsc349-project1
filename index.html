@@ -12,9 +12,11 @@ description: 11ty Pexels is a project made for CPSC 349-01 (Web Front-End Engine
     <h2>Images</h2>
   </header>
 
-  {% for image in photos.13avfhr.media -%}
-  <aside>
-    <img src="{{image.src.medium}}" alt="{{image.alt}}" />
-  </aside>
-  {% endfor -%}
+  {%- for image in photos.13avfhr.media %}
+    <a href="">
+      <aside>
+        <img src="{{image.src.medium}}" alt="{{image.alt}}" />
+      </aside>
+    </a>
+  {%- endfor %}
 </section>
