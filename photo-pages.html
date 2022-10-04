@@ -1,19 +1,26 @@
 ---
-pagination:
-    data: photos.13avfhr.media
-    size: 1
-    alias: post
-permalink: "posts/{{post.id | slug}}/"
+layout: base
 
+pagination:
+  data: photos.13avfhr.media
+  size: 1
+  alias: photo
+permalink: "photos/{{photo.id | slug}}/"
+eleventyComputed:
+  title: "{{photo.alt}}"
+  tagline: "{{photo.alt}}"
+  description: "by {{photo.photographer}}"
 ---
 
-
-<!DOCTYPE html>
-<html lang="en">
-  <head>
-    <meta charset="utf-8">
-    <h1><img src="{{post.src.medium}}" alt="{{post.alt}}"></h1>
-
-  </head>
-</html>
- 
+<section>
+  <figure>
+    <img
+      src="{{photo.src.large}}"
+      alt="{{photo.alt}}"
+      style="background-color: {{photo.avg_color}};"
+    />
+    <figcaption>
+      View this photo on <a href="{{photo.url}}" target="_blank">Pexels</a>
+    </figcaption>
+  </figure>
+</section>
