@@ -28,13 +28,13 @@ eleventyComputed:
   <p>Page {{pagination.pageNumber}} of {{pagination.pages.length | minus: 1}}</p>
   <div>
     {% if pagination.pageNumber != 0 %}
-    <a href="/cpsc349-project1/{{ pagination.href.first }}">First</a>
+    <a href="cpsc349-project1/{{ pagination.href.first }}">First</a>
     {% else %} First {% endif %} {% if pagination.href.previous %}
-    <a href="/cpsc349-project1/{{ pagination.href.previous }}">Previous</a>
+    <a href="cpsc349-project1/{{ pagination.href.previous }}">Previous</a>
     {% else %} Previous {% endif %} {% if pagination.href.next %}
-    <a href="/cpsc349-project1/{{ pagination.href.next }}">Next</a>
+    <a href="cpsc349-project1/{{ pagination.href.next }}">Next</a>
     {% else %} Next {% endif %} {% if pagination.pageNumber != 5 %}
-    <a href="/cpsc349-project1/{{ pagination.href.last }}">Last</a>
+    <a href="cpsc349-project1/{{ pagination.href.last }}">Last</a>
     {% else %} Last {% endif %}
   </div>
 </footer>
