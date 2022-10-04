@@ -13,7 +13,7 @@ eleventyComputed:
 <section>
   {% for photo in pagination.items -%}
   <aside>
-    <a href="photos/{{photo.id}}">{{photo.alt}}<br /><br /></a>
+    <a href="/photos/{{photo.id}}">{{photo.alt}}<br /><br /></a>
     <img src="{{photo.src.portrait}}" alt="{{photo.alt}}" />
     <small>
       <a href="{{photo.photographer_url}}" target="_blank">
