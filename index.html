@@ -1,41 +1,40 @@
 ---
 layout: base
-title: Home
 tagline: We show really cool photos here.
 description: 11ty Pexels is a project made for CPSC 349-01 (Web Front-End Engineering).
 
 pagination:
   data: photos.13avfhr.media
-  size: 10
+  size: 6
+eleventyComputed:
+  title: "Page {{pagination.pageNumber}}"
 ---
 
 <section>
-  <hr />
-
-  <header>
-    <h2>Images</h2>
-  </header>
-
-  {% for image in pagination.items -%}
+  {% for photo in pagination.items -%}
   <aside>
-    <a href = "docs/{{image.id}}.html" target="_blank"><img src="{{image.src.medium}}" alt="{{image.alt}}" /></a> 
-
+    <a href="photos/{{photo.id}}">{{photo.alt}}<br /><br /></a>
+    <img src="{{photo.src.portrait}}" alt="{{photo.alt}}" />
+    <small>
+      <a href="{{photo.photographer_url}}" target="_blank">
+        By {{photo.photographer}}
+      </a>
+    </small>
   </aside>
   {% endfor -%}
-
 </section>
 
-<hr>
-<ul>
-  <li><a href="{{ pagination.href.first }}">First</a></li>
-  <li>{% if pagination.href.previous %}<a href="{{ pagination.href.previous }}">Previous</a>{% else %}Previous{% endif %}</li>
-
-  <li>
-  Page {{ pagination.pageNumber | plus: 1 }}
-  </li>
-
-  <li>{% if pagination.href.next %}<a href="{{ pagination.href.next }}">Next</a>{% else %}Next{% endif %}</li>
-  <li><a href="{{ pagination.href.last }}">Last</a></li>
-</ul>
-
-
+<footer>
+  <p>Page {{pagination.pageNumber}} of {{pagination.pages.length | minus: 1}}</p>
+  <div>
+    {% if pagination.pageNumber != 0 %}
+    <a href="{{ pagination.href.first }}">First</a>
+    {% else %} First {% endif %} {% if pagination.href.previous %}
+    <a href="{{ pagination.href.previous }}">Previous</a>
+    {% else %} Previous {% endif %} {% if pagination.href.next %}
+    <a href="{{ pagination.href.next }}">Next</a>
+    {% else %} Next {% endif %} {% if pagination.pageNumber != 5 %}
+    <a href="{{ pagination.href.last }}">Last</a>
+    {% else %} Last {% endif %}
+  </div>
+</footer>
