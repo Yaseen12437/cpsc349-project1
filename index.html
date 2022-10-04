@@ -18,7 +18,8 @@ pagination:
 
   {% for image in pagination.items -%}
   <aside>
-    <img src="{{image.src.medium}}" alt="{{image.alt}}" />
+    <a href = "docs/{{image.id}}.html" target="_blank"><img src="{{image.src.medium}}" alt="{{image.alt}}" /></a> 
+
   </aside>
   {% endfor -%}
 
