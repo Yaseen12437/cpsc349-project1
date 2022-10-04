@@ -1,12 +1,8 @@
----
-site: 11ty Pexels
----
-
 <!DOCTYPE html>
 
 <html lang="en">
   <head>
-    <title>{{ title }} | {{ site }}</title>
+    <title>11ty Pexels | {{ title }}</title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="stylesheet" href="https://unpkg.com/mvp.css" />
   </head>
@@ -14,41 +10,16 @@ site: 11ty Pexels
   <body>
     <header>
       <nav>
-        <h3>{{ site }}</h3>
-
+        <h3>11ty Pexels</h3>
         <ul>
           <li><a href="/">Home</a></li>
           <li><a href="/">About</a></li>
-          <li>
-            <a
-              href="https://github.com/mploythai/cpsc349-project1"
-              target="_blank"
-              rel="noopener noreferrer"
-            >
-              GitHub
-            </a>
-          </li>
         </ul>
       </nav>
 
-      <h1>{{ tagline }}</h1>
-      <p>{{ description }}</p>
+      <h1>{{tagline}}</h1>
+      <p>{{description}}</p>
     </header>
-
-    <main>{{ content }}</main>
-
-    <footer>
-      <p>
-        <small>
-          <a
-            href="https://pexels.com"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Photos provided by Pexels
-          </a>
-        </small>
-      </p>
-    </footer>
+    <main>{{content}}</main>
   </body>
 </html>
