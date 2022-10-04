@@ -3,6 +3,10 @@ layout: base
 title: Home
 tagline: We show really cool photos here.
 description: 11ty Pexels is a project made for CPSC 349-01 (Web Front-End Engineering).
+
+pagination:
+  data: photos.13avfhr.media
+  size: 10
 ---
 
 <section>
@@ -12,9 +16,26 @@ description: 11ty Pexels is a project made for CPSC 349-01 (Web Front-End Engine
     <h2>Images</h2>
   </header>
 
-  {% for image in photos.13avfhr.media -%}
+  {% for image in pagination.items -%}
   <aside>
-    <img src="{{image.src.medium}}" alt="{{image.alt}}" />
+    <a href = "docs/{{image.id}}.html" target="_blank"><img src="{{image.src.medium}}" alt="{{image.alt}}" /></a> 
+
   </aside>
   {% endfor -%}
+
 </section>
+
+<hr>
+<ul>
+  <li><a href="{{ pagination.href.first }}">First</a></li>
+  <li>{% if pagination.href.previous %}<a href="{{ pagination.href.previous }}">Previous</a>{% else %}Previous{% endif %}</li>
+
+  <li>
+  Page {{ pagination.pageNumber | plus: 1 }}
+  </li>
+
+  <li>{% if pagination.href.next %}<a href="{{ pagination.href.next }}">Next</a>{% else %}Next{% endif %}</li>
+  <li><a href="{{ pagination.href.last }}">Last</a></li>
+</ul>
+
+
